@@ -7,12 +7,12 @@
 
 
 typedef int(group)(int);
-typedef char(name)(char*);
+typedef char(name)(char*); ////еще одна проверка изменений
 typedef HINSTANCE hModule;
 
-int main() /// /Мейн 22:49
+int main() 
 {
-	HINSTANCE dll = LoadLibrary(L"C://Users//user//source//repos//BUBNOVADLL//Debug//BUBNOVADLL.dll"); ///получаем указатель на DLL
+	HINSTANCE dll = LoadLibrary(L"BUBNOVADLL.dll"); ///получаем указатель на DLL
 	{
 		group* Group;
 		name* Name;
@@ -26,6 +26,7 @@ int main() /// /Мейн 22:49
 		int grr = 666;
 		std::cout << "Group is " << Group(grr) << "\n";
 		std::cout << "Name is " << n << "\n";
+		delete[]n;
 	}
 	return 0;
 
